@@ -7,6 +7,13 @@ Adds support to res.json method for passing a promise directly.  If promise is r
 
 ##Usage
 
+`npm install --save express-json-promise`
+
+```javascript
+var app = express();
+app.use(require('express-json-promise')());
+````
+
 With express-json-promise, you can pass a promise for your async workflow directly to res.json methods.  If the promise is successful, the native `res.json` method is called for you with the result.  If it rejects via an exception, that exception object is passed to express' `next` function, triggering the error-handling middleware for you.
 
 ``````javascript
