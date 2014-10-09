@@ -43,6 +43,8 @@ app.use(function ErrorHandler(err, req, res, next) {
 });
 ```````
 
+###Options
+
 The `options` parameter to the middleware allows selection of which methods you wish to override.  By default, it'll override both `json` and `jsonp` methods.  Technically you can override any method on `res`, but not all will behave as you might expect.
 
 `````javascript
