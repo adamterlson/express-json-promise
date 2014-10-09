@@ -1,0 +1,26 @@
+{
+  "name": "express-json-promise",
+  "version": "0.0.1",
+  "description": "Adds support to express's res.json method for passing in a promise.  Promise resolution is passed to the native res.json method while exceptions go to error-handling middleware.",
+  "main": "./lib/express_json_promise.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamterlson/express-json-promise.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "res.json",
+    "promise",
+    "node"
+  ],
+  "author": "Adam Terlson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamterlson/express-json-promise/issues"
+  },
+  "homepage": "https://github.com/adamterlson/express-json-promise"
+}
