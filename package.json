@@ -1,7 +1,7 @@
 {
   "name": "express-json-promise",
   "version": "0.0.1",
-  "description": "Adds support to express's res.json method for passing in a promise.  Promise resolution is passed to the native res.json method while exceptions go to error-handling middleware.",
+  "description": "Adds support to express's res.json and res.jsonp methods for passing in a promise.  Promise resolution is passed to the native method while exceptions go to error-handling middleware.",
   "main": "./lib/express_json_promise.js",
   "scripts": {
     "test": "mocha -R spec"
