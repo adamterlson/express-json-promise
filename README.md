@@ -27,6 +27,8 @@ app.get('/foo', function (req, res) {
     .then(anotherThing)
     .then(function (result) {
       if (result === 'happy') {
+        // As this is the ultimate result of `workflow`, this will get
+        // passed to `res.json` and to the client if all else is successful.
         return { result: 'stuff' };
       }
       // No need to call res.json or set status!  Throw as per usual.
