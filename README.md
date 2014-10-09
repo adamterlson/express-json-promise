@@ -48,7 +48,7 @@ The `options` parameter to the middleware allows selection of which methods you 
 `````javascript
 app.use(require('express-json-promise')({ override: ['jsonp'] }));
 `````````
-By doing this, the `json` method will be left alone and retain its default lack-of-promisey-goodness-support state.
+By doing this, the `json` method will be left alone and retain its default lack-of-promisey-goodness support.
 
 #### Why don't you just override `send`?
 [Because](https://github.com/strongloop/express/blob/master/lib/response.js#L228).
