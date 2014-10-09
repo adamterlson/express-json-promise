@@ -3,7 +3,6 @@ var should = require('should');
 var request = require('supertest');
 var Q = require('q');
 
-
 var responses = { 
   happy: { happy: true },
   sad: { sad: true }
@@ -21,8 +20,8 @@ function createApp() {
   });
 
   app.use(function (err, req, res, next) {
-    res.status(500);
-    res.json(responses.sad);
+    res.status(501);
+    res.json({ error: responses.sad });
   });
 
   return app;
@@ -30,6 +29,7 @@ function createApp() {
 
 describe('express-json-promise', function () {
   var app;
+
   beforeEach(function () {
     app = createApp();
   });
@@ -53,9 +53,9 @@ describe('express-json-promise', function () {
       request(app)
         .get('/json/sad')
         .expect('Content-Type', /json/)
-        .expect(500)
+        .expect(501)
         .end(function (err, res) {
-          should(res.body).eql(responses.sad);
+          should(res.body).eql({ error: responses.sad });
           done();
         });
     });
