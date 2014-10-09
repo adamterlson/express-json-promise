@@ -40,8 +40,7 @@ app.get('/foo', function (req, res) {
 
 // ErrorHandler will be triggered with the thrown exception above, just as one would expect!
 app.use(function ErrorHandler(err, req, res, next) {
-  res.status(500);
-  res.json({ message: 'Something Failed!', details: err });
+  res.status(500).json({ message: 'Something Failed!', details: err });
 });
 ```````
 
