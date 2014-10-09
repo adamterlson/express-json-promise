@@ -9,7 +9,7 @@ Adds support to res.json method for passing a promise directly.  If promise is r
 
 With express-json-promise, you can pass a promise for your async workflow directly to res.json methods.  If the promise is successful, the native `res.json` method is called for you with the result.  If it rejects via an exception, that exception object is passed to express' `next` function, triggering the error-handling middleware for you.
 
-``````javascript`````
+``````javascript
 var app = express();
 app.use(require('express-json-promise')());
 app.get('/foo', function (req, res) {
@@ -36,7 +36,7 @@ app.use(function ErrorHandler(err, req, res, next) {
 
 The `options` parameter to the middleware allows selection of which methods you wish to override.  By default, it'll override both `json` and `jsonp` methods.  Technically you can override any method on `res`, but not all will behave as you might expect.
 
-`````javascript``````
+`````javascript
 app.use(require('express-json-promise')({ override: ['jsonp'] }));
 `````````
 By doing this, the `json` method will be left alone and retain its default lack-of-promisey-goodness-support state.
