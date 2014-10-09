@@ -3,7 +3,7 @@
 express-json-promise
 ====================
 
-Adds support to res.json method for passing a promise directly.  If promise is rejected, will automatically call error-handling middleware.
+Adds support for passing a promise directly to `res.json` and `res.jsonp`.  A resolved promise has its result sent to the native implementation while a rejected one will automatically call error-handling middleware with the exception.
 
 ##Usage
 
@@ -16,7 +16,7 @@ app.use(require('express-json-promise')());
 
 ##Description
 
-With express-json-promise, you can pass a promise for your async workflow directly to res.json methods.  If the promise is successful, the native `res.json` method is called for you with the result.  If it rejects via an exception, that exception object is passed to express' `next` function, triggering the error-handling middleware for you.
+With express-json-promise, you can pass a promise for your async workflow directly to `res.json` and `res.jsonp` methods.  If the promise is successful, the native `res.json` method is called for you with the result.  If it rejects via an exception, that exception object is passed to express' `next`, triggering the error-handling middleware.
 
 ``````javascript
 var app = express();
